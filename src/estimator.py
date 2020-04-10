@@ -25,11 +25,11 @@ def estimator(data):
     'casesForVentilatorsByRequestedTime': int((2/100) * result['impact']['infectionsByRequestedTime'])
   })
   result['impact'].update({
-    'dollarsInFlight': result['impact']['infectionsByRequestedTime'] * (65/100) * 1.5 * 30
+    'dollarsInFlight': round(result['impact']['infectionsByRequestedTime'] * (65/100) * 1.5 * 30, 2)
   })
 
 
-
+# serverImpact
   result['serverImpact'].update({
     'currentlyInfected': data['reportedCases'] * 50
   })
@@ -50,7 +50,7 @@ def estimator(data):
     'casesForVentilatorsByRequestedTime': int((2/100) * result['serverImpact']['infectionsByRequestedTime'])
   })
   result['serverImpact'].update({
-    'dollarsInFlight': result['serverImpact']['infectionsByRequestedTime'] * (65/100) * 1.5 * 30
+    'dollarsInFlight': round(result['serverImpact']['infectionsByRequestedTime'] * (65/100) * 1.5 * 30, 2)
   })
 
   
